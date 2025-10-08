@@ -1,0 +1,55 @@
+# Introduction
+
+The validation and characterization of in vitro diagnostic tests (IVDs) stand on a foundation of best practices, primarily articulated in the consensus guidance documents published by the Clinical Laboratory Standards Institute (CLSI). These documents, shaped by input from the FDA and leading product development companies, form the industry standard. However, practitioners frequently encounter ambiguity in the application and statistical interpretation of the CLSI guidelines. While sophisticated tools, such as the mcr, VCA, and VFC statistical packages pioneered by companies like Roche, have helped standardize some methodologies, a significant need remains for a practical, in-depth explanation of these statistical concepts. This book aims to provide that missing practical context and statistical clarification, offering a comprehensive resource to successfully navigate IVD test validation.
+
+# IVD Methodologies
+
+The scientific IVD methods used in this book include immunoassay, PCR/molecular diagnostic, clinical chemistry and hematology.
+
+|  |  |  |
+|----|----|----|
+| Technology/Field | Description | Example Tests |
+| **Immunoassay** | Uses the reaction between antibodies and antigens to detect specific substances (proteins, hormones, drugs). | HIV screening, cardiac marker tests (BNP, Troponin), hormone tests (Estriol, Estradiol) |
+| **PCR/Molecular Diagnostics** | Tests that analyze genetic material (DNA/RNA). PCR (Polymerase Chain Reaction) is a technique used to amplify a target sequence. | COVID-19 tests, tests for genetic diseases, viral load monitoring. |
+| **Clinical Chemistry** | The study of chemical and biochemical components in blood, urine, and other fluids. | Glucose, cholesterol, liver function, and kidney function tests. |
+| **Hematology** | Analysis of blood components, including cell count, size, and function. | Complete Blood Count (CBC) analyzers, coagulation analyzers. |
+
+## Immunoassay Detection
+
+Immunoassay analyzers can be highly automated and rely on precise liquid handling and powerful signal generation.
+
+-   Principle: Exploits the highly specific binding between an antigen (analyte) and an antibody.
+
+-   Detection Focus: Chemiluminescence (CLIA) and Fluorescence (FIA). These non-isotopic labels generate extremely high-intensity signals, providing the sensitivity needed to measure hormones (like estriol and estradiol), proteins, and drugs at very low concentrations.
+
+## PCR/Molecular Diagnostic Detection
+
+While sequencing is done on larger instruments, diagnostic PCR is most commonly run on dedicated benchtop thermal cyclers.
+
+-   Principle: Relies on the Polymerase Chain Reaction (PCR) to exponentially amplify a specific target nucleic acid sequence (DNA or RNA).
+
+-   Detection Focus: Real-Time PCR (qPCR). Detection is integrated into the thermal cycling process, eliminating the need for post-amplification gel separation.
+
+## Clinical Chemistry Detection
+
+High-volume chemistry analyzers are the workhorses of the core lab, built for speed and efficiency in measuring common blood components.
+
+-   Principle: Measures the concentration of various metabolites, enzymes, and electrolytes.
+
+-   Detection Focus: Spectrophotometry/Colorimetry and Electrochemistry.
+
+    -   Spectrophotometry: Used for the vast majority of assays (glucose, liver enzymes, cholesterol). Automated analyzers run chemical reactions in tiny cuvettes and measure the light absorption of the resulting colored product.
+
+    -   Electrochemistry: Ion-Selective Electrodes (ISEs) are integrated into the analyzer to rapidly measure electrolytes (Na+, K+, Cl−) in a flow-through system.
+
+## Hematology Detection
+
+Modern hematology is dominated by fully automated analyzers that provide a Complete Blood Count (CBC) and detailed cell differentiation in seconds.
+
+-   Principle: Quantifies, sizes, and identifies the three major cell lines (RBCs, WBCs, Platelets).
+
+-   Detection Focus: Electrical Impedance and Flow Cytometry/Light Scatter.
+
+    -   Electrical Impedance (Coulter Principle): Used to count and size cells. Cells pass through a small aperture, momentarily increasing electrical resistance to generate a pulse (count and size).
+
+    -   Flow Cytometry/Light Scatter: Used for detailed White Blood Cell (WBC) differentials. Cells are hydrodynamically focused to pass one-by-one through a laser. Detectors measure light scatter (forward scatter for size, side scatter for internal complexity) and fluorescence (after specific staining) to classify cells into 5 or more distinct types.

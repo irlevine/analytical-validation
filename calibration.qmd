@@ -1,0 +1,86 @@
+# Calibration
+
+Calibration is the process that establishes the relationship between the measured instrument signal (e.g., light absorbance, fluorescence) and the actual concentration of the substance being tested.
+
+This established relationship is referred to as the dose-response curve. The mathematical function used to accurately represent and model this relationship is called the calibration curve.
+
+By using this curve, the signal from an unknown sample to be accurately converted into a final result, whether that measure is qualitative (present/absent), semi-quantitative (low, medium, high), or quantitative (e.g., 4.5 mg/dL).
+
+# Calibration Math Models
+
+For the focus of this book, mathematical calibration models are continuous monotonic functions. This is required to assure that the signal for any sample corresponds with a unique concentration. If the mathematical calibration model is not a continuous monotonic function, then there could be more than one concentration associated with a single signal, or there may be no concentration associated with a signal at all.
+
+## Linear
+
+$f(x)$ $$y = m \space x + b$$ $f^{-1}(y)$ $$x = \frac{y - b}{m}$$ $f'(x)$ $$y = m$$
+
+## Quadratric
+
+$f(x)$ $$y = a \space x^2 + b \space x + c$$ $f^{-1}(y)$ $$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$ $f'(x)$ $$y = 2a \space x + b$$
+
+## 3 Parameter Power Function
+
+$f(x)$ $$y = a + b \space x^c$$
+
+$f^{-1}(y)$ $$x = \left(\frac{y - a}{b} \right)^\left(1/c\right)$$
+
+$f'(x)$ $$y'=c \space b \space x^{c-1}$$
+
+## 4 Parameter Logistic
+
+$f(x)$ $$y = \frac{a-d}{1+\left({x}/{c}\right)^b} + d$$
+
+$f^{-1}(y)$ $$x = c \space \left(\frac{a-d}{y-d} -1 \right)^\left({1}/{b}\right)  $$
+
+$f'(x)$ $$y' =\left(b \space \frac{d-a}{c} \right) \left(1+\left({x}/{c}\right)^{b} \right)^{-2} \left({x}/{c}\right)^{b-1}$$
+
+## 5 Parameter Logistic
+
+$f(x)$ $$y = \frac{a-d}{ \left(1 + \left({x}/{c}\right)^b \right)^g} + d$$ where the function simplies to the 4-PL function when $g = 1$
+
+$f^{-1}(y)$ $$x = c \left(\left(\frac{a - d}{y - d}\right)^{\frac{1}{g}} - 1\right)^{\frac{1}{b}}$$
+
+## Cubic Polynomial Spline
+
+$f(x)$ $$
+\begin{matrix} 
+y = & a_{1} + b_{1}(x - S_0) + c_{1}(x-S_0)^2 + d_{1}(x-S_0)^3 \space & S_0 \le x \lt S_1\\
+& a_{2} + b_{2}(x - S_1) + c_{2}(x-S_1)^2 + d_{2}(x-S_1)^3 \space & S_1 \le x \lt S_2\\
+& a_{3} + b_{3}(x - S_2) + c_{3}(x-S_2)^2 + d_{3}(x-S_2)^3 \space & S_2 \le x \lt S_3\\
+& \vdots & \vdots \\
+& a_{n} + b_{n}(x - S_{m-1}) + c_{n}(x-S_{m-1})^2 + d_{n}(x-S_{m-1})^3 \space & S_{m-1} \le x \lt S_m\\
+\end{matrix} 
+$$
+
+$f^{-1}(y)$ The inverse equations are solved numerically (Newton-Raphson method).
+
+$f'(x)$ $$
+\begin{matrix} 
+y = & b_{1} + 2 \space c_{1}(x-S_0) + 3 \space d_{1}(x-S_0)^2 \space & S_0 \le x \lt S_1\\
+& b_{2} + 2\space c_{2}(x-S_1) + 3 \space d_{2}(x-S_1)^2 \space & S_1 \le x \lt S_2\\
+& b_{3} + 2\space c_{3}(x-S_2) + 3 \space d_{3}(x-S_2)^2 \space & S_2 \le x \lt S_3\\
+& \vdots & \vdots \\
+& b_{n} + 2\space c_{n}(x-S_{m-1}) + 3 \space d_{n}(x-S_{m-1})^2 \space & S_{m-1} \le x \lt S_m\\
+\end{matrix} 
+$$
+
+
+# 4 Parameter Curve
+
+```{r}
+#| echo: false
+source("calibration-utils.R")
+library(ggplot2)
+x <- log_seq(0.1, 300)
+param <- c(3.67e7, -1.39, 2.29e2, 6.6e3)
+# g (Asymmetry Factor)	0.6696
+y <- sapply(x, fx_4pl, param)
+
+ggplot(tibble::tibble(x, y), aes(x, y)) +
+  geom_line() +
+  xlab("dose (concentration)") +
+  ylab("response (signal)") +
+  ggtitle("4pl-calibration curve") +
+  theme_bw()
+
+```

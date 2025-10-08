@@ -1,0 +1,182 @@
+[
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "2 IVD Methodologies\nThe validation and characterization of in vitro diagnostic tests (IVDs) stand on a foundation of best practices, primarily articulated in the consensus guidance documents published by the Clinical Laboratory Standards Institute (CLSI). These documents, shaped by input from the FDA and leading product development companies, form the industry standard. However, practitioners frequently encounter ambiguity in the application and statistical interpretation of the CLSI guidelines. While sophisticated tools, such as the mcr, VCA, and VFC statistical packages pioneered by companies like Roche, have helped standardize some methodologies, a significant need remains for a practical, in-depth explanation of these statistical concepts. This book aims to provide that missing practical context and statistical clarification, offering a comprehensive resource to successfully navigate IVD test validation.\nThe scientific IVD methods used in this book include immunoassay, PCR/molecular diagnostic, clinical chemistry and hematology.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "2  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Summary</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "intro.html#immunoassay-detection",
+    "href": "intro.html#immunoassay-detection",
+    "title": "1  Introduction",
+    "section": "2.1 Immunoassay Detection",
+    "text": "2.1 Immunoassay Detection\nImmunoassay analyzers can be highly automated and rely on precise liquid handling and powerful signal generation.\n\nPrinciple: Exploits the highly specific binding between an antigen (analyte) and an antibody.\nDetection Focus: Chemiluminescence (CLIA) and Fluorescence (FIA). These non-isotopic labels generate extremely high-intensity signals, providing the sensitivity needed to measure hormones (like estriol and estradiol), proteins, and drugs at very low concentrations.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#pcrmolecular-diagnostic-detection-benchtop",
+    "href": "intro.html#pcrmolecular-diagnostic-detection-benchtop",
+    "title": "1  Introduction",
+    "section": "2.2 PCR/Molecular Diagnostic Detection (Benchtop)",
+    "text": "2.2 PCR/Molecular Diagnostic Detection (Benchtop)\nWhile sequencing is done on larger instruments, diagnostic PCR is most commonly run on dedicated benchtop thermal cyclers.\n\nPrinciple: Relies on the Polymerase Chain Reaction (PCR) to exponentially amplify a specific target nucleic acid sequence (DNA or RNA).\nDetection Focus: Real-Time PCR (qPCR). Detection is integrated into the thermal cycling process, eliminating the need for post-amplification gel separation.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#clinical-chemistry-detection-high-volume",
+    "href": "intro.html#clinical-chemistry-detection-high-volume",
+    "title": "1  Introduction",
+    "section": "2.3 Clinical Chemistry Detection (High Volume)",
+    "text": "2.3 Clinical Chemistry Detection (High Volume)\nHigh-volume chemistry analyzers are the workhorses of the core lab, built for speed and efficiency in measuring common blood components.\n\nPrinciple: Measures the concentration of various metabolites, enzymes, and electrolytes.\nDetection Focus: Spectrophotometry/Colorimetry and Electrochemistry.\n\nSpectrophotometry: Used for the vast majority of assays (glucose, liver enzymes, cholesterol). Automated analyzers run chemical reactions in tiny cuvettes and measure the light absorption of the resulting colored product.\nElectrochemistry: Ion-Selective Electrodes (ISEs) are integrated into the analyzer to rapidly measure electrolytes (Na+, K+, Cl−) in a flow-through system.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#hematology-detection-high-volume",
+    "href": "intro.html#hematology-detection-high-volume",
+    "title": "1  Introduction",
+    "section": "2.4 Hematology Detection (High Volume)",
+    "text": "2.4 Hematology Detection (High Volume)\nModern hematology is dominated by fully automated analyzers that provide a Complete Blood Count (CBC) and detailed cell differentiation in seconds.\n\nPrinciple: Quantifies, sizes, and identifies the three major cell lines (RBCs, WBCs, Platelets).\nDetection Focus: Electrical Impedance and Flow Cytometry/Light Scatter.\n\nElectrical Impedance (Coulter Principle): Used to count and size cells. Cells pass through a small aperture, momentarily increasing electrical resistance to generate a pulse (count and size).\nFlow Cytometry/Light Scatter: Used for detailed White Blood Cell (WBC) differentials. Cells are hydrodynamically focused to pass one-by-one through a laser. Detectors measure light scatter (forward scatter for size, side scatter for internal complexity) and fluorescence (after specific staining) to classify cells into 5 or more distinct types.\n\n\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#pcrmolecular-diagnostic-detection",
+    "href": "intro.html#pcrmolecular-diagnostic-detection",
+    "title": "1  Introduction",
+    "section": "2.2 PCR/Molecular Diagnostic Detection",
+    "text": "2.2 PCR/Molecular Diagnostic Detection\nWhile sequencing is done on larger instruments, diagnostic PCR is most commonly run on dedicated benchtop thermal cyclers.\n\nPrinciple: Relies on the Polymerase Chain Reaction (PCR) to exponentially amplify a specific target nucleic acid sequence (DNA or RNA).\nDetection Focus: Real-Time PCR (qPCR). Detection is integrated into the thermal cycling process, eliminating the need for post-amplification gel separation.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#clinical-chemistry-detection",
+    "href": "intro.html#clinical-chemistry-detection",
+    "title": "1  Introduction",
+    "section": "2.3 Clinical Chemistry Detection",
+    "text": "2.3 Clinical Chemistry Detection\nHigh-volume chemistry analyzers are the workhorses of the core lab, built for speed and efficiency in measuring common blood components.\n\nPrinciple: Measures the concentration of various metabolites, enzymes, and electrolytes.\nDetection Focus: Spectrophotometry/Colorimetry and Electrochemistry.\n\nSpectrophotometry: Used for the vast majority of assays (glucose, liver enzymes, cholesterol). Automated analyzers run chemical reactions in tiny cuvettes and measure the light absorption of the resulting colored product.\nElectrochemistry: Ion-Selective Electrodes (ISEs) are integrated into the analyzer to rapidly measure electrolytes (Na+, K+, Cl−) in a flow-through system.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#hematology-detection",
+    "href": "intro.html#hematology-detection",
+    "title": "1  Introduction",
+    "section": "2.4 Hematology Detection",
+    "text": "2.4 Hematology Detection\nModern hematology is dominated by fully automated analyzers that provide a Complete Blood Count (CBC) and detailed cell differentiation in seconds.\n\nPrinciple: Quantifies, sizes, and identifies the three major cell lines (RBCs, WBCs, Platelets).\nDetection Focus: Electrical Impedance and Flow Cytometry/Light Scatter.\n\nElectrical Impedance (Coulter Principle): Used to count and size cells. Cells pass through a small aperture, momentarily increasing electrical resistance to generate a pulse (count and size).\nFlow Cytometry/Light Scatter: Used for detailed White Blood Cell (WBC) differentials. Cells are hydrodynamically focused to pass one-by-one through a laser. Detectors measure light scatter (forward scatter for size, side scatter for internal complexity) and fluorescence (after specific staining) to classify cells into 5 or more distinct types.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "calibration.html",
+    "href": "calibration.html",
+    "title": "2  Calibration",
+    "section": "",
+    "text": "3 Calibration Math Models\nCalibration is the process that establishes the relationship between the measured instrument signal (e.g., light absorbance, fluorescence) and the actual concentration of the substance being tested.\nThis established relationship is referred to as the dose-response curve. The mathematical function used to accurately represent and model this relationship is called the calibration curve.\nBy using this curve, the signal from an unknown sample to be accurately converted into a final result, whether that measure is qualitative (present/absent), semi-quantitative (low, medium, high), or quantitative (e.g., 4.5 mg/dL).\nFor the focus of this book, mathematical calibration models are continuous monotonic functions. This is required to assure that the signal for any sample corresponds with a unique concentration. If the mathematical calibration model is not a continuous monotonic function, then there could be more than one concentration associated with a single signal, or there may be no concentration associated with a signal at all.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Calibration</span>"
+    ]
+  },
+  {
+    "objectID": "calibration.html#linear",
+    "href": "calibration.html#linear",
+    "title": "2  Calibration",
+    "section": "3.1 Linear",
+    "text": "3.1 Linear\n\\(f(x)\\) \\[y = m \\space x + b\\] \\(f^{-1}(y)\\) \\[x = \\frac{y - b}{m}\\] \\(f'(x)\\) \\[y = m\\]",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Calibration</span>"
+    ]
+  },
+  {
+    "objectID": "calibration.html#quadratric",
+    "href": "calibration.html#quadratric",
+    "title": "2  Calibration",
+    "section": "3.2 Quadratric",
+    "text": "3.2 Quadratric\n\\(f(x)\\) \\[y = a \\space x^2 + b \\space x + c\\] \\(f^{-1}(y)\\) \\[x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}\\] \\(f'(x)\\) \\[y = 2a \\space x + b\\]",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Calibration</span>"
+    ]
+  },
+  {
+    "objectID": "calibration.html#parameter-power-function",
+    "href": "calibration.html#parameter-power-function",
+    "title": "2  Calibration",
+    "section": "3.3 3 Parameter Power Function",
+    "text": "3.3 3 Parameter Power Function\n\\(f(x)\\) \\[y = a + b \\space x^c\\]\n\\(f^{-1}(y)\\) \\[x = \\left(\\frac{y - a}{b} \\right)^\\left(1/c\\right)\\]\n\\(f'(x)\\) \\[y'=c \\space b \\space x^{c-1}\\]",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Calibration</span>"
+    ]
+  },
+  {
+    "objectID": "calibration.html#parameter-logistic",
+    "href": "calibration.html#parameter-logistic",
+    "title": "2  Calibration",
+    "section": "3.4 4 Parameter Logistic",
+    "text": "3.4 4 Parameter Logistic\n\\(f(x)\\) \\[y = \\frac{a-d}{1+\\left({x}/{c}\\right)^b} + d\\]\n\\(f^{-1}(y)\\) \\[x = c \\space \\left(\\frac{a-d}{y-d} -1 \\right)^\\left({1}/{b}\\right)  \\]\n\\(f'(x)\\) \\[y' =\\left(b \\space \\frac{d-a}{c} \\right) \\left(1+\\left({x}/{c}\\right)^{b} \\right)^{-2} \\left({x}/{c}\\right)^{b-1}\\]",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Calibration</span>"
+    ]
+  },
+  {
+    "objectID": "calibration.html#parameter-logistic-1",
+    "href": "calibration.html#parameter-logistic-1",
+    "title": "2  Calibration",
+    "section": "3.5 5 Parameter Logistic",
+    "text": "3.5 5 Parameter Logistic\n\\(f(x)\\) \\[y = \\frac{a-d}{ \\left(1 + \\left({x}/{c}\\right)^b \\right)^g} + d\\] where the function simplies to the 4-PL function when \\(g = 1\\)\n\\(f^{-1}(y)\\) \\[x = c \\left(\\left(\\frac{a - d}{y - d}\\right)^{\\frac{1}{g}} - 1\\right)^{\\frac{1}{b}}\\]",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Calibration</span>"
+    ]
+  },
+  {
+    "objectID": "calibration.html#cubic-polynomial-spline",
+    "href": "calibration.html#cubic-polynomial-spline",
+    "title": "2  Calibration",
+    "section": "3.6 Cubic Polynomial Spline",
+    "text": "3.6 Cubic Polynomial Spline\n\\(f(x)\\) \\[\n\\begin{matrix}\ny = & a_{1} + b_{1}(x - S_0) + c_{1}(x-S_0)^2 + d_{1}(x-S_0)^3 \\space & S_0 \\le x \\lt S_1\\\\\n& a_{2} + b_{2}(x - S_1) + c_{2}(x-S_1)^2 + d_{2}(x-S_1)^3 \\space & S_1 \\le x \\lt S_2\\\\\n& a_{3} + b_{3}(x - S_2) + c_{3}(x-S_2)^2 + d_{3}(x-S_2)^3 \\space & S_2 \\le x \\lt S_3\\\\\n& \\vdots & \\vdots \\\\\n& a_{n} + b_{n}(x - S_{m-1}) + c_{n}(x-S_{m-1})^2 + d_{n}(x-S_{m-1})^3 \\space & S_{m-1} \\le x \\lt S_m\\\\\n\\end{matrix}\n\\]\n\\(f^{-1}(y)\\) The inverse equations are solved numerically (Newton-Raphson method).\n\\(f'(x)\\) \\[\n\\begin{matrix}\ny = & b_{1} + 2 \\space c_{1}(x-S_0) + 3 \\space d_{1}(x-S_0)^2 \\space & S_0 \\le x \\lt S_1\\\\\n& b_{2} + 2\\space c_{2}(x-S_1) + 3 \\space d_{2}(x-S_1)^2 \\space & S_1 \\le x \\lt S_2\\\\\n& b_{3} + 2\\space c_{3}(x-S_2) + 3 \\space d_{3}(x-S_2)^2 \\space & S_2 \\le x \\lt S_3\\\\\n& \\vdots & \\vdots \\\\\n& b_{n} + 2\\space c_{n}(x-S_{m-1}) + 3 \\space d_{n}(x-S_{m-1})^2 \\space & S_{m-1} \\le x \\lt S_m\\\\\n\\end{matrix}\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Calibration</span>"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "analytical-validation",
+    "section": "",
+    "text": "Preface\nThis is the first edition of the diagnostic development and validation guidebook. It is a collection of concepts and use cases based on personal experience of over ten years of IVD product development.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "Preface"
+    ]
+  }
+]
