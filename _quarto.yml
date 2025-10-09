@@ -9,6 +9,7 @@ book:
     - index.qmd
     - intro.qmd
     - calibration.qmd
+    - detection-limits.qmd
     - summary.qmd
     - references.qmd
 

@@ -65,7 +65,8 @@ y = & b_{1} + 2 \space c_{1}(x-S_0) + 3 \space d_{1}(x-S_0)^2 \space & S_0 \le x
 $$
 
 
-# 4 Parameter Curve
+# Example Calibration Curve
+A dose response curve for an assay with proportionally increasing signal represented by a 4 parameter logistic curve. 
 
 ```{r}
 #| echo: false
