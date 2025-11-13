@@ -35,6 +35,7 @@ The function $f_sd(x)$ is often referred to as a precision profile model. There 
 ```{r}
 #| echo: false
 #| message: false
+# ep17 figure 1
 library(tidyverse, quietly = TRUE)
 lob <- 3 * 1.645
 lod <- 2 * lob
@@ -133,3 +134,18 @@ In this initial edition, we will focus on a widely accepted method for determini
 -   **CV Definition:** The CV is the standard deviation expressed as a percentage of the mean (i.e., CV=(MeanStandard Deviation​)×100%). It serves as a normalized measure of precision.
 
 -   **Methodology:** The process involves testing multiple replicates across a range of low analyte concentrations. The concentration at which the **imprecision** (variability) of the assay drops to a level deemed acceptable—in this initial case, a CV of 20%—is established as the LoQ. This ensures that quantitative results reported at or above this level have acceptable analytical precision for clinical utility.
+
+
+
+# LoB Calculations
+
+$$LoB = M_B + c_p \cdot SD_B$$
+
+where $c_p$ is defined as:
+$$c_p = \frac{1.645}{1-\left( \frac{1}{4 \cdot(N - \space K)} \right) } $$
+
+where $N$ is the total number of replicates and $K$ is the number of blank samples. The minimum study design requires $N = 60$ and $K = 4$. This effective adjustment is small, and in many estimates is not adjusted. 
+
+$$1-\left( \frac{1}{4 \cdot(60 - \space 4)} \right) \approxeq  0.99554$$
+
+this would inflate the $c_p$ value to approximately 1.6524. The magnitude of change is small especially considering the assumption that it is appropriate to pool the 4 samples together and get an overall standard deviation. For completeness, it is relatively easy to include the adjustment. However, this is one (of many) examples where the CLSI committee may have better served practitioners by simplifying the calculation. 

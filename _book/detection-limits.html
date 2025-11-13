@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; Calibration – analytical-validation</title>
+<title>3&nbsp; Sensitivity Studies – analytical-validation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./detection-limits.html" rel="next">
-<link href="./intro.html" rel="prev">
+<link href="./summary.html" rel="next">
+<link href="./calibration.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -111,7 +111,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./calibration.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Calibration</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./detection-limits.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Sensitivity Studies</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -150,13 +150,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./calibration.html" class="sidebar-item-text sidebar-link active">
+  <a href="./calibration.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Calibration</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./detection-limits.html" class="sidebar-item-text sidebar-link">
+  <a href="./detection-limits.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Sensitivity Studies</span></span></a>
   </div>
 </li>
@@ -182,16 +182,15 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#calibration-math-models" id="toc-calibration-math-models" class="nav-link active" data-scroll-target="#calibration-math-models"><span class="header-section-number">3</span> Calibration Math Models</a>
+  <li><a href="#defining-sensitivity-parameters" id="toc-defining-sensitivity-parameters" class="nav-link active" data-scroll-target="#defining-sensitivity-parameters"><span class="header-section-number">4</span> Defining Sensitivity Parameters</a>
   <ul class="collapse">
-  <li><a href="#linear" id="toc-linear" class="nav-link" data-scroll-target="#linear"><span class="header-section-number">3.1</span> Linear</a></li>
-  <li><a href="#quadratric" id="toc-quadratric" class="nav-link" data-scroll-target="#quadratric"><span class="header-section-number">3.2</span> Quadratric</a></li>
-  <li><a href="#parameter-power-function" id="toc-parameter-power-function" class="nav-link" data-scroll-target="#parameter-power-function"><span class="header-section-number">3.3</span> 3 Parameter Power Function</a></li>
-  <li><a href="#parameter-logistic" id="toc-parameter-logistic" class="nav-link" data-scroll-target="#parameter-logistic"><span class="header-section-number">3.4</span> 4 Parameter Logistic</a></li>
-  <li><a href="#parameter-logistic-1" id="toc-parameter-logistic-1" class="nav-link" data-scroll-target="#parameter-logistic-1"><span class="header-section-number">3.5</span> 5 Parameter Logistic</a></li>
-  <li><a href="#cubic-polynomial-spline" id="toc-cubic-polynomial-spline" class="nav-link" data-scroll-target="#cubic-polynomial-spline"><span class="header-section-number">3.6</span> Cubic Polynomial Spline</a></li>
+  <li><a href="#limit-of-blank-lob" id="toc-limit-of-blank-lob" class="nav-link" data-scroll-target="#limit-of-blank-lob"><span class="header-section-number">4.1</span> Limit of Blank (LoB)</a>
+  <ul class="collapse">
+  <li><a href="#limit-of-detection-lod" id="toc-limit-of-detection-lod" class="nav-link" data-scroll-target="#limit-of-detection-lod"><span class="header-section-number">4.1.1</span> Limit of Detection (LoD)</a></li>
+  <li><a href="#limit-of-quantitation-loq" id="toc-limit-of-quantitation-loq" class="nav-link" data-scroll-target="#limit-of-quantitation-loq"><span class="header-section-number">4.1.2</span> Limit of Quantitation (LoQ)</a></li>
   </ul></li>
-  <li><a href="#example-calibration-curve" id="toc-example-calibration-curve" class="nav-link" data-scroll-target="#example-calibration-curve"><span class="header-section-number">4</span> Example Calibration Curve</a></li>
+  </ul></li>
+  <li><a href="#lob-calculations" id="toc-lob-calculations" class="nav-link" data-scroll-target="#lob-calculations"><span class="header-section-number">5</span> LoB Calculations</a></li>
   </ul>
 </nav>
     </div>
@@ -200,7 +199,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Calibration</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Sensitivity Studies</span></h1>
 </div>
 
 
@@ -217,72 +216,62 @@ window.Quarto = {
 </header>
 
 
-<p>Calibration is the process that establishes the relationship between the measured instrument signal (e.g., light absorbance, fluorescence) and the actual concentration of the substance being tested.</p>
-<p>This established relationship is referred to as the dose-response curve. The mathematical function used to accurately represent and model this relationship is called the calibration curve.</p>
-<p>By using this curve, the signal from an unknown sample to be accurately converted into a final result, whether that measure is qualitative (present/absent), semi-quantitative (low, medium, high), or quantitative (e.g., 4.5&nbsp;mg/dL).</p>
-<section id="calibration-math-models" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Calibration Math Models</h1>
-<p>For the focus of this book, mathematical calibration models are continuous monotonic functions. This is required to assure that the signal for any sample corresponds with a unique concentration. If the mathematical calibration model is not a continuous monotonic function, then there could be more than one concentration associated with a single signal, or there may be no concentration associated with a signal at all.</p>
-<section id="linear" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="linear"><span class="header-section-number">3.1</span> Linear</h2>
-<p><span class="math inline">\(f(x)\)</span> <span class="math display">\[y = m \space x + b\]</span> <span class="math inline">\(f^{-1}(y)\)</span> <span class="math display">\[x = \frac{y - b}{m}\]</span> <span class="math inline">\(f'(x)\)</span> <span class="math display">\[y = m\]</span></p>
-</section>
-<section id="quadratric" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="quadratric"><span class="header-section-number">3.2</span> Quadratric</h2>
-<p><span class="math inline">\(f(x)\)</span> <span class="math display">\[y = a \space x^2 + b \space x + c\]</span> <span class="math inline">\(f^{-1}(y)\)</span> <span class="math display">\[x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\]</span> <span class="math inline">\(f'(x)\)</span> <span class="math display">\[y = 2a \space x + b\]</span></p>
-</section>
-<section id="parameter-power-function" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="parameter-power-function"><span class="header-section-number">3.3</span> 3 Parameter Power Function</h2>
-<p><span class="math inline">\(f(x)\)</span> <span class="math display">\[y = a + b \space x^c\]</span></p>
-<p><span class="math inline">\(f^{-1}(y)\)</span> <span class="math display">\[x = \left(\frac{y - a}{b} \right)^\left(1/c\right)\]</span></p>
-<p><span class="math inline">\(f'(x)\)</span> <span class="math display">\[y'=c \space b \space x^{c-1}\]</span></p>
-</section>
-<section id="parameter-logistic" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="parameter-logistic"><span class="header-section-number">3.4</span> 4 Parameter Logistic</h2>
-<p><span class="math inline">\(f(x)\)</span> <span class="math display">\[y = \frac{a-d}{1+\left({x}/{c}\right)^b} + d\]</span></p>
-<p><span class="math inline">\(f^{-1}(y)\)</span> <span class="math display">\[x = c \space \left(\frac{a-d}{y-d} -1 \right)^\left({1}/{b}\right)  \]</span></p>
-<p><span class="math inline">\(f'(x)\)</span> <span class="math display">\[y' =\left(b \space \frac{d-a}{c} \right) \left(1+\left({x}/{c}\right)^{b} \right)^{-2} \left({x}/{c}\right)^{b-1}\]</span></p>
-</section>
-<section id="parameter-logistic-1" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="parameter-logistic-1"><span class="header-section-number">3.5</span> 5 Parameter Logistic</h2>
-<p><span class="math inline">\(f(x)\)</span> <span class="math display">\[y = \frac{a-d}{ \left(1 + \left({x}/{c}\right)^b \right)^g} + d\]</span> where the function simplies to the 4-PL function when <span class="math inline">\(g = 1\)</span></p>
-<p><span class="math inline">\(f^{-1}(y)\)</span> <span class="math display">\[x = c \left(\left(\frac{a - d}{y - d}\right)^{\frac{1}{g}} - 1\right)^{\frac{1}{b}}\]</span></p>
-</section>
-<section id="cubic-polynomial-spline" class="level2" data-number="3.6">
-<h2 data-number="3.6" class="anchored" data-anchor-id="cubic-polynomial-spline"><span class="header-section-number">3.6</span> Cubic Polynomial Spline</h2>
-<p><span class="math inline">\(f(x)\)</span> <span class="math display">\[
-\begin{matrix}
-y = &amp; a_{1} + b_{1}(x - S_0) + c_{1}(x-S_0)^2 + d_{1}(x-S_0)^3 \space &amp; S_0 \le x \lt S_1\\
-&amp; a_{2} + b_{2}(x - S_1) + c_{2}(x-S_1)^2 + d_{2}(x-S_1)^3 \space &amp; S_1 \le x \lt S_2\\
-&amp; a_{3} + b_{3}(x - S_2) + c_{3}(x-S_2)^2 + d_{3}(x-S_2)^3 \space &amp; S_2 \le x \lt S_3\\
-&amp; \vdots &amp; \vdots \\
-&amp; a_{n} + b_{n}(x - S_{m-1}) + c_{n}(x-S_{m-1})^2 + d_{n}(x-S_{m-1})^3 \space &amp; S_{m-1} \le x \lt S_m\\
-\end{matrix}
-\]</span></p>
-<p><span class="math inline">\(f^{-1}(y)\)</span> The inverse equations are solved numerically (Newton-Raphson method).</p>
-<p><span class="math inline">\(f'(x)\)</span> <span class="math display">\[
-\begin{matrix}
-y = &amp; b_{1} + 2 \space c_{1}(x-S_0) + 3 \space d_{1}(x-S_0)^2 \space &amp; S_0 \le x \lt S_1\\
-&amp; b_{2} + 2\space c_{2}(x-S_1) + 3 \space d_{2}(x-S_1)^2 \space &amp; S_1 \le x \lt S_2\\
-&amp; b_{3} + 2\space c_{3}(x-S_2) + 3 \space d_{3}(x-S_2)^2 \space &amp; S_2 \le x \lt S_3\\
-&amp; \vdots &amp; \vdots \\
-&amp; b_{n} + 2\space c_{n}(x-S_{m-1}) + 3 \space d_{n}(x-S_{m-1})^2 \space &amp; S_{m-1} \le x \lt S_m\\
-\end{matrix}
-\]</span></p>
-</section>
-</section>
-<section id="example-calibration-curve" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Example Calibration Curve</h1>
-<p>A dose response curve for an assay with proportionally increasing signal represented by a 4 parameter logistic curve.</p>
+<p>This chapter serves as a guide to sensitivity studies—a critical component in the development and validation of In Vitro Diagnostic (IVD) medical devices. The accuracy and reliability of an IVD assay hinge upon its ability to reliably detect and measure the target analyte, especially at low concentrations.</p>
+<p>A test’s sensitivity is generally characterized by three key parameters: the Limit of Blank (LoB), the Limit of Detection (LoD), and the Limit of Quantitation (LoQ). Understanding the distinctions and appropriate determination of these limits is paramount for establishing a test’s performance claims and ensuring patient safety. This volume will detail the methodologies, statistical considerations, and best practices for conducting these essential sensitivity studies, providing the necessary framework for robust IVD development.</p>
+<hr>
+<section id="defining-sensitivity-parameters" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Defining Sensitivity Parameters</h1>
+<section id="limit-of-blank-lob" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="limit-of-blank-lob"><span class="header-section-number">4.1</span> Limit of Blank (LoB)</h2>
+<p>The <strong>Limit of Blank (LoB)</strong> is the highest measurement result that is likely to be observed for a blank sample—a sample known <em>not</em> to contain the target analyte. Statistically, the LoB is the concentration value at which a blank sample (containing zero analyte) will measure 95% of the time. This value is associated with a 5% false positive error rate (Type I error, α)—meaning 5% of true blank samples will incorrectly yield a result greater than the LoB.</p>
+<ul>
+<li><p><strong>Purpose:</strong> LoB helps to distinguish between actual signal and the background noise inherent to the assay system.</p></li>
+<li><p><strong>Determination:</strong> It’s typically calculated from the mean of replicate measurements of several blank samples, plus a factor (often 1.645× the standard deviation of those measurements) to establish a non-parametric or parametric upper bound (often 95th percentile) of the blank distribution.</p></li>
+</ul>
+<section id="limit-of-detection-lod" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="limit-of-detection-lod"><span class="header-section-number">4.1.1</span> Limit of Detection (LoD)</h3>
+<p>The <strong>Limit of Detection (LoD)</strong> is the lowest concentration of analyte that can be reliably <em>detected</em>.</p>
+<ul>
+<li><p><strong>Purpose:</strong> LoD is the concentration at which the assay can reliably differentiate a sample that contains the analyte from a blank sample.</p></li>
+<li><p><strong>Determination:</strong> The LoD must be greater than the LoB. It’s often calculated by adding a factor to the LoB (e.g., 1.645× the standard deviation of low-concentration samples) or determined through a method that assesses the probability of detection (e.g., the concentration at which a test yields a true positive result 95% of the time).</p></li>
+</ul>
+<p>The relationship between the limit of blank and limit of detection is defined by the following equation:</p>
+<p><span class="math display">\[x_{LoD} = x_{LoB} \space + \space k \cdot f_{sd}(x)\]</span> where <span class="math inline">\(k = 1.645\)</span> and <span class="math inline">\(f_{sd}(x)\)</span> is the function of standard deviation by concentration <span class="math inline">\(x\)</span>. For cases when the standard deviation is constant across the low concentration range, the standard deviation is constant the equation simplifies to <span class="math inline">\(x_{LoD} = x_{LoB} \space + \space k \cdot \hat\sigma_{x}\)</span></p>
+<p>The function <span class="math inline">\(f_sd(x)\)</span> is often referred to as a precision profile model. There are a set of well defined precision profile models that will be covered later in the book.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="calibration_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="detection-limits_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
+</section>
+<section id="limit-of-quantitation-loq" class="level3" data-number="4.1.2">
+<h3 data-number="4.1.2" class="anchored" data-anchor-id="limit-of-quantitation-loq"><span class="header-section-number">4.1.2</span> Limit of Quantitation (LoQ)</h3>
+<p>The <strong>Limit of Quantitation (LoQ)</strong> is the lowest concentration of analyte that can be reliably <em>measured</em> with an acceptable level of accuracy and precision (i.e., minimal bias and variability).</p>
+<ul>
+<li><strong>Purpose:</strong> Unlike the LoD, which focuses on mere presence/absence, the LoQ defines the lowest concentration for which a quantitative value can be reported with confidence. Measurements below the LoQ should typically be reported as “Below the Limit of Quantitation” or similar.</li>
+</ul>
+<section id="initial-focus-on-loq-the-20-cv-methodology" class="level4" data-number="4.1.2.1">
+<h4 data-number="4.1.2.1" class="anchored" data-anchor-id="initial-focus-on-loq-the-20-cv-methodology"><span class="header-section-number">4.1.2.1</span> Initial Focus on LoQ: The 20% CV Methodology</h4>
+<p>In this initial edition, we will focus on a widely accepted method for determining the LoQ: identifying the concentration associated with a <strong>20% Coefficient of Variation (CV)</strong>.</p>
+<ul>
+<li><p><strong>CV Definition:</strong> The CV is the standard deviation expressed as a percentage of the mean (i.e., CV=(MeanStandard&nbsp;Deviation​)×100%). It serves as a normalized measure of precision.</p></li>
+<li><p><strong>Methodology:</strong> The process involves testing multiple replicates across a range of low analyte concentrations. The concentration at which the <strong>imprecision</strong> (variability) of the assay drops to a level deemed acceptable—in this initial case, a CV of 20%—is established as the LoQ. This ensures that quantitative results reported at or above this level have acceptable analytical precision for clinical utility.</p></li>
+</ul>
+</section>
+</section>
+</section>
+</section>
+<section id="lob-calculations" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> LoB Calculations</h1>
+<p><span class="math display">\[LoB = M_B + c_p \cdot SD_B\]</span></p>
+<p>where <span class="math inline">\(c_p\)</span> is defined as: <span class="math display">\[c_p = \frac{1.645}{1-\left( \frac{1}{4 \cdot(N - \space K)} \right) } \]</span></p>
+<p>where <span class="math inline">\(N\)</span> is the total number of replicates and <span class="math inline">\(K\)</span> is the number of blank samples. The minimum study design requires <span class="math inline">\(N = 60\)</span> and <span class="math inline">\(K = 4\)</span>. This effective adjustment is small, and in many estimates is not adjusted.</p>
+<p><span class="math display">\[1-\left( \frac{1}{4 \cdot(60 - \space 4)} \right) \approxeq  0.99554\]</span></p>
+<p>this would inflate the <span class="math inline">\(c_p\)</span> value to approximately 1.6524. The magnitude of change is small especially considering the assumption that it is appropriate to pool the 4 samples together and get an overall standard deviation. For completeness, it is relatively easy to include the adjustment. However, this is one (of many) examples where the CLSI committee may have better served practitioners by simplifying the calculation.</p>
 
 
 </section>
@@ -689,13 +678,13 @@ y = &amp; b_{1} + 2 \space c_{1}(x-S_0) + 3 \space d_{1}(x-S_0)^2 \space &amp; S
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./intro.html" class="pagination-link" aria-label="Introduction">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
+      <a href="./calibration.html" class="pagination-link" aria-label="Calibration">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Calibration</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./detection-limits.html" class="pagination-link" aria-label="Sensitivity Studies">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Sensitivity Studies</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./summary.html" class="pagination-link" aria-label="Summary">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
